@@ -43,7 +43,7 @@ section{padding-block:clamp(80px,11vw,150px)}
   linear-gradient(0deg,var(--carbon) 0%,rgba(17,22,34,0) 45%),
   linear-gradient(180deg,rgba(11,14,22,.7) 0%,rgba(11,14,22,0) 22%)}
 .hero .copy{position:relative;z-index:2;padding-block:0 clamp(56px,7vw,96px);display:grid;gap:26px;max-width:1440px;width:100%;margin-inline:auto}
-.hero h1{font-size:clamp(40px,8.4vw,124px);max-width:11ch;overflow-wrap:anywhere}
+.hero h1{font-size:clamp(44px,8.4vw,124px);max-width:15ch}
 .hero p.lede{font-size:clamp(18px,1.6vw,22px);max-width:36ch;color:var(--silver)}
 .hero .ctas{display:flex;flex-wrap:wrap;gap:14px}
 .hero .loc{position:absolute;right:var(--gut);bottom:clamp(56px,7vw,96px);z-index:2;font:500 12px/1.6 var(--mono);color:var(--steel);text-align:right;letter-spacing:.06em}
