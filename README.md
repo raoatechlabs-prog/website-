@@ -4,7 +4,8 @@
 | --- | --- | --- |
 | Website | repo root, deployed on **Vercel** | Next.js 16 (App Router), TypeScript |
 | Database | `supabase/migrations` | **Supabase** Postgres with row-level security |
-| Backend API | `services/api`, deployed on **Railway** | Hono on Node, **Twilio** SMS |
+| SMS alerts | in the website on Vercel | **Twilio** (optional) |
+| Backend API | `services/api`, for **Railway** later | Hono on Node (optional) |
 | Analytics | browser | **PostHog** (optional) |
 | Errors and session replay | browser and server | **Sentry** (optional) |
 
@@ -41,7 +42,9 @@ The contact form writes to `public.enquiries`. Visitors can insert but not read;
 
 Import this repo at vercel.com/new. Framework and root directory are detected automatically. Add the variables from `.env.example` under Project Settings, Environment Variables.
 
-## Railway (backend API)
+## Railway (backend API, optional)
+
+Not needed today: the website sends SMS alerts itself. Use this when the project needs a separate backend.
 
 1. New project, deploy from GitHub repo, then set the service **Root Directory** to `services/api`. `railway.json` sets the build, start and health check.
 2. Add the variables from `services/api/.env.example`.
@@ -51,7 +54,7 @@ Endpoints: `GET /health`, and `POST /enquiries/notify` (bearer `API_SHARED_SECRE
 
 ## Twilio
 
-Set `TWILIO_ACCOUNT_SID`, `TWILIO_AUTH_TOKEN`, `TWILIO_FROM_NUMBER` and `NOTIFY_TO_NUMBER` on Railway. Without them the API skips SMS.
+Set `TWILIO_ACCOUNT_SID`, `TWILIO_AUTH_TOKEN`, `TWILIO_FROM_NUMBER` and `NOTIFY_TO_NUMBER` on Vercel. Each new enquiry then texts the office. Without them no SMS is sent.
 
 ## PostHog
 

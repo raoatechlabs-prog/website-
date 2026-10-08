@@ -3,6 +3,7 @@
 import { z } from 'zod'
 import * as Sentry from '@sentry/nextjs'
 import { createClient } from '@/lib/supabase/server'
+import { sendSms, smsEnabled } from '@/lib/sms'
 
 const schema = z.object({
   track: z.enum(['talent', 'grants', 'investment', 'general']),
@@ -45,16 +46,23 @@ export async function submitEnquiry(_prev: EnquiryState, form: FormData): Promis
     return { status: 'error', message: 'Your enquiry could not be sent. Please try again or email us.' }
   }
 
-  await notifyBackend(parsed.data)
+  await notifyOffice(parsed.data)
   return { status: 'sent' }
 }
 
-/** Tells the Railway backend about a new enquiry so it can text the team. Never blocks the visitor. */
-async function notifyBackend(enquiry: z.infer<typeof schema>) {
-  const url = process.env.API_URL
-  const secret = process.env.API_SHARED_SECRET
-  if (!url || !secret) return
+const trackLabel = { talent: 'Join the team', grants: 'Fund a lab', investment: 'Investment', general: 'General' }
+
+/** Texts the team about a new enquiry: directly through Twilio, or via the Railway API if that is set up instead. Never blocks the visitor. */
+async function notifyOffice(enquiry: z.infer<typeof schema>) {
   try {
+    if (smsEnabled()) {
+      const who = enquiry.organisation ? `${enquiry.name} (${enquiry.organisation})` : enquiry.name
+      await sendSms(`Raoatech: new ${trackLabel[enquiry.track]} enquiry from ${who}.`)
+      return
+    }
+    const url = process.env.API_URL
+    const secret = process.env.API_SHARED_SECRET
+    if (!url || !secret) return
     await fetch(new URL('/enquiries/notify', url), {
       method: 'POST',
       headers: { 'content-type': 'application/json', authorization: `Bearer ${secret}` },
