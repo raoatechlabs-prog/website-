@@ -182,12 +182,11 @@ body{margin:0}
 .nav.open .menu-btn span{background:transparent}
 .nav.open .menu-btn span::before{transform:translateY(6px) rotate(45deg)}
 .nav.open .menu-btn span::after{transform:translateY(-6px) rotate(-45deg)}
-.hero>picture img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 40%}
-.hero>picture{position:absolute;inset:0}
+.hero .hero-img{object-fit:cover;object-position:60% 40%}
 a.mail,a.tel{text-decoration:none;border-bottom:1px solid var(--line)}
 a.mail:hover,a.tel:hover{border-color:var(--amber);color:var(--amber)}
 .reveal{transition:opacity .8s ease,transform .8s ease}
-.js .reveal.pending{opacity:0;transform:translateY(24px)}
+.reveal.pending{opacity:0;transform:translateY(24px)}
 .film .toggle{position:absolute;right:var(--gut);bottom:clamp(14px,3.6vw,40px);background:rgba(11,14,22,.6);border:1px solid var(--line);color:var(--white);font:600 11px/1 var(--body);letter-spacing:.16em;text-transform:uppercase;padding:10px 14px;cursor:pointer}
 @media (max-width:1100px){
   .menu-btn{display:inline-flex}
@@ -196,4 +195,16 @@ a.mail:hover,a.tel:hover{border-color:var(--amber);color:var(--amber)}
   .nav ul a{font:700 34px/1 var(--display);letter-spacing:.06em}
 }
 @media (max-width:640px){.nav .btn{display:none}}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.js .reveal.pending{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal.pending{opacity:1;transform:none}}
+
+/* ENQUIRY FORM */
+.enquiry{display:grid;gap:10px;margin-top:clamp(48px,6vw,72px);max-width:760px}
+.enquiry label{display:block;margin-top:12px;font:600 11px/1 var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--steel)}
+.enquiry input,.enquiry select,.enquiry textarea{width:100%;padding:14px 16px;background:var(--carbon);border:1px solid var(--line);border-radius:0;color:var(--white);font:400 16px/1.5 var(--body);letter-spacing:normal;text-transform:none}
+.enquiry textarea{min-height:140px;resize:vertical}
+.enquiry input:focus,.enquiry select:focus,.enquiry textarea:focus{outline:none;border-color:var(--amber)}
+.enquiry .btn{justify-self:start;margin-top:16px;cursor:pointer}
+.enquiry .btn[disabled]{opacity:.6;cursor:progress}
+.field-error{font:500 13px/1.4 var(--body);letter-spacing:normal;text-transform:none;color:#f08a7a}
+.form-error{color:#f08a7a}
+.enquiry.sent{padding:28px;border:1px solid var(--amber);color:var(--white)}
