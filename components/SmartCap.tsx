@@ -32,7 +32,7 @@ export function SmartCap() {
 function CapDiagram() {
   const line = { stroke: '#C0C7D1', strokeOpacity: 0.5 }
   return (
-    <svg viewBox="0 0 640 520" role="img" aria-label="Smart Cap sensor layout: crown IMU, brim RGB-D array, inward IR eye tracking, forehead sEMG">
+    <svg viewBox="110 70 550 300" role="img" aria-label="Illustration of the Smart Cap">
       <defs>
         <linearGradient id="capg" x1="0" y1="0" x2="1" y2="1">
           <stop offset="0" stopColor="#3a4254" />
@@ -50,20 +50,6 @@ function CapDiagram() {
         <circle cx="520" cy="330" r="6" />
         <circle cx="470" cy="290" r="6" />
       </g>
-      <g stroke="#D49A3E" strokeWidth={1.2} fill="none">
-        <path d="M340 105 L340 50 L200 50" />
-        <path d="M560 312 L600 250 L620 250" />
-        <path d="M520 330 L520 410 L560 410" />
-        <path d="M470 290 L400 400 L250 400" />
-      </g>
-      <text x="40" y="40" className="k">CROWN · 9-DOF IMU</text>
-      <text x="40" y="60">Head motion · 200 Hz</text>
-      <text x="440" y="222" className="k">BRIM · RGB-D</text>
-      <text x="440" y="242">Stereo depth · 60 FPS</text>
-      <text x="440" y="440" className="k">INWARD · IR ARRAY</text>
-      <text x="440" y="460">Eye tracking &amp; gaze</text>
-      <text x="40" y="420" className="k">FOREHEAD · sEMG</text>
-      <text x="40" y="440">Pre-action muscle activation</text>
     </svg>
   )
 }

@@ -117,7 +117,6 @@ export const tracks = [
     id: 'grants',
     label: 'Track B',
     title: 'Institutional & corporate grants',
-    figure: { value: '$219,500', note: '≈ ₦329.25M core lab outfitting' },
     body: 'Funds GPU clusters, robotic actuators, power analyzers and prototyping machinery. Partners receive prominent branding, first-look rights to research and strategic advisory access.',
     cta: 'Fund a lab',
   },
