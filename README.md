@@ -5,6 +5,7 @@
 | Website | repo root, deployed on **Vercel** | Next.js 16 (App Router), TypeScript |
 | Database | `supabase/migrations` | **Supabase** Postgres with row-level security |
 | Backend API | `services/api`, deployed on **Railway** | Hono on Node, **Twilio** SMS |
+| Enquiry email | server action | **Resend** |
 | Analytics | browser | **PostHog** (optional) |
 | Errors and session replay | browser and server | **Sentry** (optional) |
 
@@ -36,6 +37,16 @@ Checks: `npm run lint`, `npm run typecheck`, `npm run build`.
 3. Copy the project URL and anon key into `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY`.
 
 The contact form writes to `public.enquiries`. Visitors can insert but not read; read enquiries in the Supabase dashboard.
+
+## Enquiry email (Resend)
+
+Every enquiry is emailed to `hello@raoatechlabs.com` (change with `ENQUIRY_TO_EMAIL`). Replying to that email replies to the visitor.
+
+1. Create an account at resend.com using `hello@raoatechlabs.com`, and create an API key.
+2. Set `RESEND_API_KEY` on Vercel and redeploy.
+3. Optional: verify `raoatechlabs.com` under Domains in Resend, then set `ENQUIRY_FROM_EMAIL` to something like `Raoatech website <enquiries@raoatechlabs.com>`. Until a domain is verified, Resend only delivers to the address the account was created with.
+
+The form works with email alone, Supabase alone, or both.
 
 ## Vercel
 

@@ -8,7 +8,7 @@ export const site = {
   description:
     "West Africa's deep-tech incubator and venture studio in Yaba, Lagos. 12 specialized labs, the Smart Cap data engine, and partnership tracks for talent, grants and investment.",
   address: '1A Hughes Avenue, Alagomeji, Yaba, Lagos, Nigeria',
-  email: 'oludare.olarewaju@raoatech.com',
+  email: 'hello@raoatechlabs.com',
   phone: { display: '+234 (0) 809 722 7051', tel: '+2348097227051' },
 }
 

@@ -208,3 +208,8 @@ a.mail:hover,a.tel:hover{border-color:var(--amber);color:var(--amber)}
 .field-error{font:500 13px/1.4 var(--body);letter-spacing:normal;text-transform:none;color:#f08a7a}
 .form-error{color:#f08a7a}
 .enquiry.sent{padding:28px;border:1px solid var(--amber);color:var(--white)}
+
+/* JUSTIFIED BODY TEXT: paragraphs run flush to both edges so the right-hand side lines up. */
+p,.lab span,.spec dd em{text-align:justify;text-wrap:pretty;hyphens:auto;-webkit-hyphens:auto}
+.mission .big,.addr p,.form-error,.enquiry.sent p{text-align:start;hyphens:manual;-webkit-hyphens:manual}
+.mission .big{text-wrap:balance}
