@@ -23,8 +23,6 @@ export const nav = [
 export const stats = [
   { value: '12', label: 'Specialized lab nodes' },
   { value: '3', label: 'Functional tiers' },
-  { value: '$219.5K', label: 'Core lab outfitting initiative' },
-  { value: '200 Hz', label: 'Smart Cap motion telemetry' },
 ]
 
 export const pillars = [
@@ -78,13 +76,6 @@ export const tiers: Tier[] = [
   },
 ]
 
-export const capSpecs = [
-  { zone: 'Crown', sensor: '9-DOF IMU', detail: 'Spatial motion & head velocity · 200 Hz' },
-  { zone: 'Brim', sensor: 'RGB-D stereo array', detail: 'Hand-object interaction & depth · 60 FPS' },
-  { zone: 'Inward', sensor: 'IR eye-tracking array', detail: 'Gaze attention mapping' },
-  { zone: 'Forehead', sensor: 'sEMG electrodes', detail: 'Pre-action muscle activation & force proxy' },
-]
-
 export const studioSteps = [
   { stage: 'Stage 1', title: 'Applied R&D', body: 'Research across the 12 lab nodes.' },
   { stage: 'Stage 2', title: 'Venture Studio', body: 'Sandbox validation of products and markets.' },
@@ -126,7 +117,6 @@ export const tracks = [
     id: 'grants',
     label: 'Track B',
     title: 'Institutional & corporate grants',
-    figure: { value: '$219,500', note: '≈ ₦329.25M core lab outfitting' },
     body: 'Funds GPU clusters, robotic actuators, power analyzers and prototyping machinery. Partners receive prominent branding, first-look rights to research and strategic advisory access.',
     cta: 'Fund a lab',
   },
