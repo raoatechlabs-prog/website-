@@ -23,8 +23,6 @@ export const nav = [
 export const stats = [
   { value: '12', label: 'Specialized lab nodes' },
   { value: '3', label: 'Functional tiers' },
-  { value: '$219.5K', label: 'Core lab outfitting initiative' },
-  { value: '200 Hz', label: 'Smart Cap motion telemetry' },
 ]
 
 export const pillars = [
@@ -76,13 +74,6 @@ export const tiers: Tier[] = [
       { name: 'Additive Manufacturing & Rapid Prototyping', focus: 'SLA/FDM 3D printing, CAD modeling, enclosure fabrication.' },
     ],
   },
-]
-
-export const capSpecs = [
-  { zone: 'Crown', sensor: '9-DOF IMU', detail: 'Spatial motion & head velocity · 200 Hz' },
-  { zone: 'Brim', sensor: 'RGB-D stereo array', detail: 'Hand-object interaction & depth · 60 FPS' },
-  { zone: 'Inward', sensor: 'IR eye-tracking array', detail: 'Gaze attention mapping' },
-  { zone: 'Forehead', sensor: 'sEMG electrodes', detail: 'Pre-action muscle activation & force proxy' },
 ]
 
 export const studioSteps = [

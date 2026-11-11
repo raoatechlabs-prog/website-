@@ -1,5 +1,3 @@
-import { capSpecs } from '@/content/site'
-
 export function SmartCap() {
   return (
     <section className="cap" id="smart-cap">
@@ -15,17 +13,6 @@ export function SmartCap() {
             demonstration data. Our Egocentric Spatial-Kinematic Smart Cap captures it from the wearer&apos;s own point of
             view.
           </p>
-          <dl className="specs">
-            {capSpecs.map((s) => (
-              <div className="spec" key={s.zone}>
-                <dt>{s.zone}</dt>
-                <dd>
-                  {s.sensor}
-                  <em>{s.detail}</em>
-                </dd>
-              </div>
-            ))}
-          </dl>
           <div className="pp">
             <p>
               <b>Pipeline.</b> Multi-modal telemetry passes through Extended Kalman Filtering and matrix transformation to
