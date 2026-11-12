@@ -91,7 +91,8 @@ section{padding-block:clamp(80px,11vw,150px)}
 .cap .split{grid-template-columns:minmax(0,6fr) minmax(0,5fr);align-items:center}
 .cap h2{font-size:clamp(48px,6vw,88px);margin-top:24px}
 .cap .lede{margin-top:24px;max-width:48ch}
-.diagram{background:radial-gradient(circle at 45% 45%,#262217 0%,var(--carbon-2) 62%);border:1px solid var(--line);padding:clamp(16px,3vw,40px)}
+.diagram{margin:0;border:1px solid var(--line);background:#eef0f5}
+.diagram img{width:100%;height:auto}
 .pp{margin-top:28px;display:grid;gap:14px;font-size:15px}
 .pp b{color:var(--white)}
 

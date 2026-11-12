@@ -1,9 +1,17 @@
+import Image from 'next/image'
+
 export function SmartCap() {
   return (
     <section className="cap" id="smart-cap">
       <div className="wrap split reveal">
         <figure className="diagram">
-          <CapDiagram />
+          <Image
+            src="/images/smart-cap.jpg"
+            alt="Smart Cap hardware and sensor architecture: a Raoatech cap with dual RGB and depth cameras on the brim, a 9-DOF inertial measurement unit on the crown, and optional eye-tracking or EEG/EMG sensors in the headband"
+            width={1282}
+            height={708}
+            sizes="(max-width: 820px) 100vw, 55vw"
+          />
         </figure>
         <div>
           <div className="eyebrow">Flagship innovation</div>
@@ -18,38 +26,9 @@ export function SmartCap() {
               <b>Pipeline.</b> Multi-modal telemetry passes through Extended Kalman Filtering and matrix transformation to
               produce robot-executable VLA tokens. Work in progress.
             </p>
-            <p>
-              <b>Commercialization.</b> Protected by joint international patents, including U.S. filings, and licensed to
-              AI and robotics organizations worldwide.
-            </p>
           </div>
         </div>
       </div>
     </section>
-  )
-}
-
-function CapDiagram() {
-  const line = { stroke: '#C0C7D1', strokeOpacity: 0.5 }
-  return (
-    <svg viewBox="110 70 550 300" role="img" aria-label="Illustration of the Smart Cap">
-      <defs>
-        <linearGradient id="capg" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stopColor="#3a4254" />
-          <stop offset="1" stopColor="#1b2030" />
-        </linearGradient>
-      </defs>
-      <path d="M150 300 C150 170 250 110 340 110 C440 110 500 180 505 290 Z" fill="url(#capg)" {...line} strokeWidth={1.5} />
-      <path d="M150 300 L505 290 L505 304 L150 316 Z" fill="#2a3142" {...line} />
-      <path d="M480 292 C540 292 600 304 620 322 C600 334 540 330 470 318 Z" fill="#232a3a" {...line} strokeWidth={1.5} />
-      <path d="M250 125 C300 160 330 230 335 300" fill="none" stroke="#C0C7D1" strokeOpacity={0.18} />
-      <path d="M420 125 C420 170 430 230 440 295" fill="none" stroke="#C0C7D1" strokeOpacity={0.18} />
-      <g fill="#D49A3E">
-        <circle cx="340" cy="112" r="7" />
-        <circle cx="560" cy="312" r="7" />
-        <circle cx="520" cy="330" r="6" />
-        <circle cx="470" cy="290" r="6" />
-      </g>
-    </svg>
   )
 }
