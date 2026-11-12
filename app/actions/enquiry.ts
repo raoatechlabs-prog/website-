@@ -67,7 +67,7 @@ async function storeEnquiry(supabase: NonNullable<Awaited<ReturnType<typeof crea
 
 const trackLabel: Record<Enquiry['track'], string> = {
   talent: 'Track A · Join the team',
-  grants: 'Track B · Fund a lab',
+  grants: 'Track B · Donate or fund a lab',
   investment: 'Track C · Investment',
   general: 'General enquiry',
 }

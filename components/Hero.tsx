@@ -24,6 +24,9 @@ export function Hero() {
           <a className="btn amber" href="#partner">
             Partner with us
           </a>
+          <a className="btn" href="#donate">
+            Donate
+          </a>
         </div>
       </div>
       <div className="loc">
