@@ -8,7 +8,7 @@ import { submitEnquiry, type EnquiryState } from '@/app/actions/enquiry'
 const trackOptions = [
   { value: 'general', label: 'General enquiry' },
   { value: 'talent', label: 'Track A · Join the team' },
-  { value: 'grants', label: 'Track B · Fund a lab' },
+  { value: 'grants', label: 'Track B · Donate or fund a lab' },
   { value: 'investment', label: 'Track C · Investment' },
 ]
 

@@ -18,6 +18,7 @@ export const nav = [
   { href: '#smart-cap', label: 'Smart Cap' },
   { href: '#studio', label: 'Venture Studio' },
   { href: '#leadership', label: 'Leadership' },
+  { href: '#donate', label: 'Donate' },
 ]
 
 export const stats = [
@@ -130,3 +131,82 @@ export const tracks = [
 ] as const
 
 export type TrackId = (typeof tracks)[number]['id']
+
+// Source: "Institutional Sponsorship & Laboratory Infrastructure Outfitting Brief".
+export const givingTiers = [
+  {
+    naira: '₦15,000',
+    usd: '$10',
+    title: 'STEM Excursion Sponsor',
+    body: 'Sponsors one K-12 student for an immersive hands-on excursion in AI, VR, Robotics, and Space Technology.',
+  },
+  {
+    naira: '₦75,000',
+    usd: '$50',
+    title: 'Prototyping Kit Supporter',
+    body: 'Funds microcontroller development kits (ESP32/STM32), environmental sensor arrays, and prototyping components for student and graduate builders.',
+  },
+  {
+    naira: '₦300,000',
+    usd: '$200',
+    title: 'Hardware R&D Backer',
+    body: 'Supports brushless propulsion sets, 3D spatial depth cameras, and edge-compute modules for autonomous drone and robotics research.',
+  },
+  {
+    naira: '₦1,500,000+',
+    usd: '$1,000+',
+    title: 'Lab Infrastructure Patron',
+    body: 'Co-sponsors core laboratory equipment and workstation infrastructure across our 9 specialized R&D labs.',
+  },
+]
+
+/** Naira figures are shown at this fixed rate, as in the sponsorship brief. */
+export const nairaPerDollar = 1500
+
+export const adoptLabs = [
+  {
+    name: 'Drone Technology & Autonomous Surveillance Lab',
+    focus: 'Carbon-fiber UAV airframes, Pixhawk flight controllers, LiDAR, thermal imaging & edge AI telemetry',
+    usd: 17630,
+  },
+  {
+    name: 'Robotics & Embedded Systems Innovation Lab',
+    focus: '6-DOF robotic arms, autonomous rovers, 3D depth vision, enclosed FDM 3D printing & CNC PCB milling',
+    usd: 12960,
+  },
+  {
+    name: 'Internet of Things (IoT) & Embedded Systems Lab',
+    focus: 'STM32/ESP32 kits, LoRaWAN/NB-IoT gateways, agricultural & gas sensors, RF & logic analyzers',
+    usd: 5010,
+  },
+  {
+    name: 'Smart Diagnostics & Therapeutic Logistics Lab',
+    focus: 'Microfluidic readers, portable medical ultrasound, cold-chain GPS carriers & Raman drug spectrometers',
+    usd: 28050,
+  },
+  {
+    name: 'Smart Grid & Hybrid Power Lab',
+    focus: 'Microgrid controllers, bidirectional hybrid inverters, real-time power simulators & LiFePO4 storage',
+    usd: 39200,
+  },
+  {
+    name: 'Artificial Intelligence (AI) & HPC Lab',
+    focus: 'Multi-GPU deep learning servers, dual-GPU AI workstations, NVMe storage arrays & 4K telemetry displays',
+    usd: 65000,
+  },
+  {
+    name: 'Quality Assurance & Software Testing Lab',
+    focus: 'High-concurrency load servers, 20-device iOS/Android test matrix & hardware pen-testing suites',
+    usd: 18600,
+  },
+  {
+    name: 'Software Design & Development Lab',
+    focus: 'Full-stack engineering workstations, dual-4K monitor setups, staging servers & RAID NAS storage',
+    usd: 16450,
+  },
+  {
+    name: 'International Standards & QMS Compliance Lab',
+    focus: 'Enterprise audit servers, ISO/IEC 17025 electrical calibrators & remote audit systems',
+    usd: 16600,
+  },
+]

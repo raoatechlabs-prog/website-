@@ -7,6 +7,7 @@ import { SmartCap } from '@/components/SmartCap'
 import { Studio } from '@/components/Studio'
 import { Leadership } from '@/components/Leadership'
 import { Partner } from '@/components/Partner'
+import { Donate } from '@/components/Donate'
 import { Contact } from '@/components/Contact'
 import { Footer } from '@/components/Footer'
 import { Reveal } from '@/components/Reveal'
@@ -24,6 +25,7 @@ export default function Home() {
         <Studio />
         <Leadership />
         <Partner />
+        <Donate />
         <Contact />
       </main>
       <Footer />
