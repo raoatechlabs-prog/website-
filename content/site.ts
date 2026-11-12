@@ -4,7 +4,7 @@
 export const site = {
   name: 'Raoatech R&D and Innovation Point',
   legalName: 'Raoatech IT-Electromech Limited',
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.raoatech.com',
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.raoatechlabs.com',
   description:
     "West Africa's deep-tech incubator and venture studio in Yaba, Lagos. 12 specialized labs, the Smart Cap data engine, and partnership tracks for talent, grants and investment.",
   address: '1A Hughes Avenue, Alagomeji, Yaba, Lagos, Nigeria',

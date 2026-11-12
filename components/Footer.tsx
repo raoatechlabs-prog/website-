@@ -10,7 +10,7 @@ export function Footer() {
           © {new Date().getFullYear()} {site.legalName}
         </span>
         <a href={site.url} style={{ textDecoration: 'none' }}>
-          www.raoatech.com
+          www.raoatechlabs.com
         </a>
       </div>
     </footer>
