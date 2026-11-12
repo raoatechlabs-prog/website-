@@ -76,4 +76,4 @@ Set `NEXT_PUBLIC_SENTRY_DSN` to turn on error tracking and session replay (10% o
 
 - Replace the headshots in `public/images` with high-resolution photos (square, at least 400×400).
 - Add lab photography if desired.
-- Confirm the domain in `content/site.ts` (`site.url`) if it isn't www.raoatech.com.
+- Confirm the domain in `content/site.ts` (`site.url`) if it isn't www.raoatechlabs.com.
