@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { SiteNav } from './SiteNav'
+import { Banner } from './Banner'
 
 export function Hero() {
   return (
@@ -29,6 +30,7 @@ export function Hero() {
           </a>
         </div>
       </div>
+      <Banner />
       <div className="loc">
         1A Hughes Avenue
         <br />

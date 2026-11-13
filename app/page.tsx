@@ -8,6 +8,7 @@ import { Studio } from '@/components/Studio'
 import { Leadership } from '@/components/Leadership'
 import { Partner } from '@/components/Partner'
 import { Donate } from '@/components/Donate'
+import { Videos } from '@/components/Videos'
 import { Contact } from '@/components/Contact'
 import { Footer } from '@/components/Footer'
 import { Reveal } from '@/components/Reveal'
@@ -25,6 +26,7 @@ export default function Home() {
         <Studio />
         <Leadership />
         <Partner />
+        <Videos />
         <Donate />
         <Contact />
       </main>
