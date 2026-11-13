@@ -1,4 +1,4 @@
-import { adoptLabs, givingTiers, nairaPerDollar, site } from '@/content/site'
+import { adoptLabs, donateUrl, givingTiers, nairaPerDollar, site } from '@/content/site'
 
 const usd = (n: number) => `$${n.toLocaleString('en-US')}`
 const naira = (n: number) => `₦${(n * nairaPerDollar).toLocaleString('en-US')}`
@@ -30,7 +30,7 @@ export function Donate() {
         </div>
 
         <div className="donate-cta">
-          <a className="btn amber" href="?track=grants#contact">
+          <a className="btn amber" href={donateUrl} target="_blank" rel="noopener noreferrer">
             Donate now
           </a>
           <p>

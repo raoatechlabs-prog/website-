@@ -210,3 +210,53 @@ export const adoptLabs = [
     usd: 16600,
   },
 ]
+
+// Hero slideshow, in the order Mr Oludare chose (Drive folder "BANNER'S PICTURES": 1, 2, 3, 4, 6, 5).
+export const bannerSlides = [
+  {
+    src: '/images/banner/banner-1.jpg',
+    width: 500,
+    height: 412,
+    caption: "Mr Oludare Olarewaju, guest speaker at the Faculty of Engineering's maiden AI seminar, University of Lagos.",
+  },
+  {
+    src: '/images/banner/banner-2.jpg',
+    width: 887,
+    height: 576,
+    caption:
+      'With Florida State University’s Prof. Sastry Pamidi and Prof. Moses Anubi, meeting the Dean of Engineering, Prof. Adeosun, and colleagues at UNILAG (November 2025).',
+  },
+  {
+    src: '/images/banner/banner-3.jpg',
+    width: 750,
+    height: 548,
+    caption:
+      'MoU and MoA signing with Yaba College of Technology on human capital development and an AI, robotics and innovation hub.',
+  },
+  {
+    src: '/images/banner/banner-4.jpg',
+    width: 1200,
+    height: 675,
+    caption:
+      'Mrs Temitope Oladele-Olarewaju training Yaba College of Technology students and staff on quality assurance and software testing.',
+  },
+  {
+    src: '/images/banner/banner-6.jpg',
+    width: 717,
+    height: 531,
+    caption: "Mr Oludare Olarewaju meeting NIPOST's ICT team in Lagos.",
+  },
+  {
+    src: '/images/banner/banner-5.jpg',
+    width: 769,
+    height: 583,
+    caption:
+      'Mr Oludare Olarewaju speaking as President of the Association of Nigeria Software Testers (ANST) at its annual quality assurance event.',
+  },
+]
+
+export const donateUrl = 'https://flutterwave.com/donate/wxxpcuuc9kvy'
+
+// STEM, robotics and drone videos (YouTube IDs). Shorts are vertical.
+export const videos = ['7vOsGg8nbDU', 'MKKxHSv2hw4', 'CiFGRZbfELI', 'd6s4lxVJ0BI', '2c8eWCinvGY', 'WES2H0xHKcg']
+export const shorts = ['P82vZo104Kc', 'nPUwX9xZ9Vo', 'Cm3fa4gQ3x0', 'Rd46lk12OTs']
