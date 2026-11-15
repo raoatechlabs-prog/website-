@@ -1,51 +1,65 @@
 'use client'
 
 import { useState } from 'react'
-import { shorts, videos } from '@/content/site'
+import type { Clip } from '@/content/site'
 
 /** Shows a YouTube thumbnail and loads the player only when clicked, so the page stays fast. */
-function Video({ id, vertical }: { id: string; vertical?: boolean }) {
+function Video({ clip }: { clip: Clip }) {
   const [playing, setPlaying] = useState(false)
   return (
-    <div className={vertical ? 'video short' : 'video'}>
-      {playing ? (
-        <iframe
-          src={`https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0`}
-          title="Raoatech STEM, robotics and drone video"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        />
-      ) : (
-        <button type="button" onClick={() => setPlaying(true)} aria-label="Play video">
-          {/* eslint-disable-next-line @next/next/no-img-element -- YouTube thumbnails are served by YouTube */}
-          <img src={`https://i.ytimg.com/vi/${id}/hqdefault.jpg`} alt="" loading="lazy" />
-          <span className="play" aria-hidden="true" />
-        </button>
+    <figure className={clip.vertical ? 'v-card short' : 'v-card'}>
+      <div className="video">
+        {playing ? (
+          <iframe
+            src={`https://www.youtube-nocookie.com/embed/${clip.id}?autoplay=1&rel=0`}
+            title={clip.title ?? 'Raoatech lab video'}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+        ) : (
+          <button type="button" onClick={() => setPlaying(true)} aria-label={`Play video${clip.title ? `: ${clip.title}` : ''}`}>
+            {/* eslint-disable-next-line @next/next/no-img-element -- YouTube thumbnails are served by YouTube */}
+            <img src={`https://i.ytimg.com/vi/${clip.id}/hqdefault.jpg`} alt="" loading="lazy" />
+            <span className="play" aria-hidden="true" />
+          </button>
+        )}
+      </div>
+      {clip.title && (
+        <figcaption>
+          <h3>{clip.title}</h3>
+          {clip.body && <p>{clip.body}</p>}
+        </figcaption>
       )}
-    </div>
+    </figure>
   )
 }
 
-export function Videos() {
+type Props = { id: string; eyebrow: string; title: string; intro?: string; note: string; clips: Clip[] }
+
+export function Videos({ id, eyebrow, title, intro, note, clips }: Props) {
+  const wide = clips.filter((c) => !c.vertical)
+  const tall = clips.filter((c) => c.vertical)
   return (
-    <section className="videos" id="videos">
+    <section className="videos" id={id}>
       <div className="wrap">
-        <div className="eyebrow">STEM, robotics &amp; drones</div>
-        <h2>Hands-on training in action</h2>
-        <p className="intro">
-          Students and young engineers building, coding and flying with Raoatech: K-12 STEM, robotics and drone
-          sessions in Lagos.
-        </p>
-        <div className="video-grid">
-          {videos.map((id) => (
-            <Video key={id} id={id} />
+        <div className="eyebrow">{eyebrow}</div>
+        <div className="videos-head">
+          <h2>{title}</h2>
+          <span className="pill">{note}</span>
+        </div>
+        {intro && <p className="intro">{intro}</p>}
+        <div className={wide.length === 2 ? 'video-grid two' : 'video-grid'}>
+          {wide.map((c) => (
+            <Video key={c.id} clip={c} />
           ))}
         </div>
-        <div className="short-grid">
-          {shorts.map((id) => (
-            <Video key={id} id={id} vertical />
-          ))}
-        </div>
+        {tall.length > 0 && (
+          <div className="short-grid">
+            {tall.map((c) => (
+              <Video key={c.id} clip={c} />
+            ))}
+          </div>
+        )}
       </div>
     </section>
   )
