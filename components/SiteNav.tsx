@@ -35,8 +35,8 @@ export function SiteNav() {
             </li>
           ))}
         </ul>
-        <a className="btn amber" href="#partner">
-          Partner with us
+        <a className="btn amber" href="#contact">
+          Engage us
         </a>
         <button
           className="menu-btn"
