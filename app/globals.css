@@ -288,6 +288,8 @@ p,.lab span{text-align:justify;text-wrap:pretty;hyphens:auto;-webkit-hyphens:aut
 .impact-stat b{font:700 clamp(38px,4vw,58px)/1 var(--display);color:var(--white);text-transform:uppercase}
 .impact-stat h3{font:600 13px/1.4 var(--body);letter-spacing:.16em;color:var(--amber)}
 .impact-stat p{font-size:15px}
+.impact-stat p a{color:var(--amber);text-decoration:underline;text-underline-offset:3px}
+.impact-stat p a:hover{color:var(--white)}
 
 /* LABS & SERVICES */
 .filters{display:flex;flex-wrap:wrap;gap:10px;margin-block:clamp(36px,4vw,56px) 28px}

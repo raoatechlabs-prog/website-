@@ -272,7 +272,14 @@ export const heroCopy = {
   lede: 'Anchored in the Sabo–Yaba Innovation District of Lagos, Raoatech R&D and Innovation Point unites 12 specialized engineering laboratories, a Venture Studio Sandbox, academic R&D alliances, and enterprise consulting to bridge the prototype-to-market gap.',
 }
 
-export const impactStats = [
+export type ImpactStat = {
+  value: string
+  label: string
+  body: string
+  links?: { name: string; url: string }[]
+}
+
+export const impactStats: ImpactStat[] = [
   {
     value: '16+ Years',
     label: 'Proven Engineering Track Record',
@@ -291,7 +298,13 @@ export const impactStats = [
   {
     value: 'End-to-End',
     label: 'Lab-to-Market Execution',
-    body: 'Backed by proprietary revenue-generating platforms: Gamai, Finkia, Schoolkia, and Vestradat.',
+    body: 'Backed by proprietary revenue-generating platforms:',
+    links: [
+      { name: 'Gamai', url: 'https://www.gamai.com.ng' },
+      { name: 'Finkia', url: 'https://www.finkia.com.ng' },
+      { name: 'Schoolkia', url: 'https://www.schoolkia.com.ng' },
+      { name: 'Vestradat', url: 'https://www.vestradat.com' },
+    ],
   },
 ]
 
