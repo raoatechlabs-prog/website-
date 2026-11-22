@@ -1,6 +1,6 @@
 'use client'
 
-import { useActionState, useEffect, useRef, useState } from 'react'
+import { useActionState, useEffect, useRef } from 'react'
 import { useSearchParams } from 'next/navigation'
 import posthog from 'posthog-js'
 import { submitEnquiry, type EnquiryState } from '@/app/actions/enquiry'
@@ -42,46 +42,11 @@ export function EnquiryForm() {
       : track === 'investment'
         ? ventureStudio.id
         : 'partnership'
-  const [mail, setMail] = useState<{ gmail: string; outlook: string } | null>(null)
-  const [mailNote, setMailNote] = useState('')
   const [state, action, pending] = useActionState<EnquiryState, FormData>(sendEnquiry, { status: 'idle' })
 
   useEffect(() => {
     if (state.status === 'sent') posthog.capture('enquiry_submitted')
   }, [state.status])
-
-  /**
-   * Opens the visitor's own email app with the form filled in, and shows
-   * Gmail / Outlook web links for visitors whose computer has no mail app set up.
-   */
-  function sendByEmail() {
-    const f = new FormData(form.current!)
-    const get = (k: string) => String(f.get(k) ?? '').trim()
-    if (!get('name') || !get('message')) {
-      setMail(null)
-      setMailNote('Fill in your name and project details first.')
-      return
-    }
-    setMailNote('')
-    const service = serviceOptions.find((o) => o.value === get('service'))?.label ?? ''
-    const body = [
-      `Name: ${get('name')}`,
-      `Organization: ${get('organisation')}`,
-      `Email: ${get('email')}`,
-      `Phone / WhatsApp: ${get('phone')}`,
-      `Lab / service area: ${service}`,
-      '',
-      get('message'),
-    ].join('\n')
-    const to = encodeURIComponent(site.publicEmail)
-    const su = encodeURIComponent(`Lab service inquiry: ${service}`)
-    const bd = encodeURIComponent(body)
-    setMail({
-      gmail: `https://mail.google.com/mail/?view=cm&fs=1&to=${to}&su=${su}&body=${bd}`,
-      outlook: `https://outlook.office.com/mail/deeplink/compose?to=${to}&subject=${su}&body=${bd}`,
-    })
-    window.location.href = `mailto:${site.publicEmail}?subject=${su}&body=${bd}`
-  }
 
   if (state.status === 'sent') {
     return (
@@ -150,28 +115,7 @@ export function EnquiryForm() {
         <button className="btn amber" type="submit" disabled={pending}>
           {pending ? 'Sending…' : 'Submit lab service inquiry'}
         </button>
-        <button className="btn" type="button" onClick={sendByEmail}>
-          Send via email client
-        </button>
       </div>
-      {mailNote && (
-        <p className="form-error" role="alert">
-          {mailNote}
-        </p>
-      )}
-      {mail && (
-        <p className="mail-fallback" role="status">
-          No email app opened? Send it with{' '}
-          <a href={mail.gmail} target="_blank" rel="noopener noreferrer">
-            Gmail
-          </a>{' '}
-          or{' '}
-          <a href={mail.outlook} target="_blank" rel="noopener noreferrer">
-            Outlook
-          </a>
-          , or write to <a href={`mailto:${site.publicEmail}`}>{site.publicEmail}</a>.
-        </p>
-      )}
     </form>
   )
 }

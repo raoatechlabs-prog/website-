@@ -34,11 +34,33 @@ function Video({ clip }: { clip: Clip }) {
   )
 }
 
+/** Wide videos in a grid, with YouTube Shorts in a row of tall cards underneath. */
+export function VideoGrid({ clips }: { clips: Clip[] }) {
+  const wide = clips.filter((c) => !c.vertical)
+  const tall = clips.filter((c) => c.vertical)
+  return (
+    <>
+      {wide.length > 0 && (
+        <div className={wide.length % 2 === 0 ? 'video-grid two' : 'video-grid'}>
+          {wide.map((c) => (
+            <Video key={c.id} clip={c} />
+          ))}
+        </div>
+      )}
+      {tall.length > 0 && (
+        <div className="short-grid">
+          {tall.map((c) => (
+            <Video key={c.id} clip={c} />
+          ))}
+        </div>
+      )}
+    </>
+  )
+}
+
 type Props = { id: string; eyebrow: string; title: string; intro?: string; note: string; clips: Clip[] }
 
 export function Videos({ id, eyebrow, title, intro, note, clips }: Props) {
-  const wide = clips.filter((c) => !c.vertical)
-  const tall = clips.filter((c) => c.vertical)
   return (
     <section className="videos" id={id}>
       <div className="wrap">
@@ -48,18 +70,7 @@ export function Videos({ id, eyebrow, title, intro, note, clips }: Props) {
           <span className="pill">{note}</span>
         </div>
         {intro && <p className="intro">{intro}</p>}
-        <div className={wide.length === 2 ? 'video-grid two' : 'video-grid'}>
-          {wide.map((c) => (
-            <Video key={c.id} clip={c} />
-          ))}
-        </div>
-        {tall.length > 0 && (
-          <div className="short-grid">
-            {tall.map((c) => (
-              <Video key={c.id} clip={c} />
-            ))}
-          </div>
-        )}
+        <VideoGrid clips={clips} />
       </div>
     </section>
   )

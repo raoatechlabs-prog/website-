@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { advisors, leadership, type Person } from '@/content/site'
+import { advisors, leadership, profiles, type Person } from '@/content/site'
 
 function PersonCard({ p }: { p: Person }) {
   return (
@@ -20,7 +20,22 @@ export function Leadership() {
       <div className="wrap">
         <div className="eyebrow">Leadership</div>
         <h2>Directed by builders, researchers and regulators</h2>
-        <div className="grid-people reveal">
+        <div className="profiles">
+          {profiles.map((p) => (
+            <article className="profile reveal" key={p.name}>
+              <Image src={`/images/${p.photo}.jpg`} alt={p.name} width={480} height={600} sizes="(max-width: 820px) 100vw, 280px" />
+              <div>
+                <h3>{p.name}</h3>
+                <span className="profile-role">{p.role}</span>
+                {p.bio.map((para) => (
+                  <p key={para.slice(0, 40)}>{para}</p>
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
+        <div className="sub-h">Executives & lab directors</div>
+        <div className="grid-people reveal" style={{ marginTop: 36 }}>
           {leadership.map((p) => (
             <PersonCard key={p.name} p={p} />
           ))}

@@ -28,9 +28,33 @@ export const nav = [
 
 export type Person = { name: string; role: string; org?: string; photo: string }
 
+export type Profile = { name: string; role: string; photo: string; bio: string[] }
+
+// Full profiles. More executives' profiles will be added in the next version.
+export const profiles: Profile[] = [
+  {
+    name: 'Oludare Olarewaju',
+    role: 'Founder, Chief Executive Officer & Chief Product Architect',
+    photo: 'oludare-profile',
+    bio: [
+      'Oludare Olarewaju is a serial technology entrepreneur, innovation ecosystem builder, product strategist, and software quality assurance leader with over 15 years of experience across enterprise solutions architecture, software engineering, edtech, fintech, artificial intelligence, and venture development.',
+      'As the Founder, CEO, and Chief Product Architect of Raoatech IT-Electromech Limited, Oludare drives the strategic direction, technical architecture, and operational scale of the company’s enterprise platforms and commercialization programs. He is also the visionary behind the Raoatech R&D and Innovation Point, a commercialization-driven ecosystem designed to bridge academic research, advanced technology prototyping, and venture creation. His professional trajectory includes founding Techxia Communications & Automation and early hands-on technical experience in telecoms engineering, specializing in VSAT installation, networking, and GSM operations.',
+      'Oludare holds a Bachelor of Science (B.Sc.) in Systems Engineering from the University of Lagos and a Postgraduate Advanced Certificate in Oil and Gas Downstream Operations Management from UNILAG Consult. He also completed formal project management training through The American PM Programme at the Project Management College UK.',
+    ],
+  },
+  {
+    name: 'Temitope Oladele-Olarewaju',
+    role: 'Director, Quality Assurance and Operations',
+    photo: 'temitope-profile',
+    bio: [
+      'Temitope Oladele-Olarewaju is an accomplished technology professional and software quality assurance specialist with approximately 14 years of experience across telecommunications, financial services, digital transformation, and technology operations.',
+      'As Director of Quality Assurance and Operations at Raoatech IT-Electromech Limited, Temitope provides strategic and operational leadership across the company’s tech platforms, commercialization programs, innovation initiatives, and ecosystem development. Her extensive background includes work with leading enterprise organizations, such as MTN Nigeria and key banking institutions, equipping her with expertise in enterprise systems, QA frameworks, business process optimization, and large-scale tech deployment.',
+      'Temitope holds a B.Sc. in Computer Science from Olabisi Onabanjo University (OOU) and is an ISTQB Certified Software Tester, reflecting international competence in software delivery best practices and quality engineering.',
+    ],
+  },
+]
+
 export const leadership: Person[] = [
-  { name: 'Oludare Olarewaju', role: 'Founder, CEO & Chief Product Architect', photo: 'oludare' },
-  { name: 'Temitope Oladele-Olarewaju', role: 'Director, QA & Operations', photo: 'temitope' },
   { name: 'Prof. T.A. Ibidapo', role: 'Non-Executive Director; Lead Partner, International Standards & QMS Compliance Lab', org: 'United States', photo: 'ibidapo' },
   { name: 'Prof. Moses Anubi', role: 'Non-Executive Director, Resilient & Autonomous Systems', org: 'United States', photo: 'anubi' },
   { name: 'Dr. Elizabeth Oludadepo', role: 'Director, Smart Diagnostics & Therapeutic Logistics Lab', photo: 'oludadepo' },
@@ -219,9 +243,24 @@ export type Clip = { id: string; title?: string; body?: string; vertical?: boole
 
 export const featuredVideos: Clip[] = [
   {
+    id: '2T9wmtCMOu4',
+    title: 'Visitor Management System for Lagos State Lotteries Board',
+    body: 'Raoatech’s deployment of a Visitor Management System for the Lagos State Lotteries Board (now the Lagos State Lotteries and Gaming Authority).',
+  },
+  {
+    id: 'G8y_m8QE-Xw',
+    title: 'Access Control System for The Nest Innovation Park',
+    body: 'Raoatech’s installation of an Access Control System at The Nest Innovation Park, Yaba, Lagos.',
+  },
+  {
     id: '7vOsGg8nbDU',
-    title: 'STEM & Emerging Tech Lab Highlight',
-    body: 'Live hands-on technical engagement with robotics, artificial intelligence, and embedded hardware systems.',
+    title: 'Drone Piloting for Learners',
+    body: 'Hands-on drone piloting sessions for young learners at Raoatech R&D and Innovation Point.',
+  },
+  {
+    id: '3Vnp8ZFCQ7I',
+    title: 'Robotics & STEM Training at St. Gregory College, Lagos',
+    body: 'A Raoatech-organised tech event, in partnership with the management of St. Gregory College, introducing over 400 students to robotics and STEM.',
   },
   {
     id: 'MKKxHSv2hw4',
@@ -524,6 +563,11 @@ export const academicGallery: GalleryItem[] = [
   { img: 'academia-08', width: 517, height: 364, title: 'Raoatech-Sponsored UNILAG 6-Day Tech & Leadership Program', body: 'Entrepreneurship Enablement and Leadership Week (EELW) featuring Prof. Folasade Ogunsola (then DVC, Development Services, UNILAG), Mrs. Adenike, Mr. Oludare Olarewaju, and student trainees.' },
   { img: 'academia-09', width: 937, height: 564, title: 'International R&D Delegation (Florida State University & UNILAG)', body: 'Mr. Oludare Olarewaju joining FSU representatives (Prof. Sastry Pamidi & Prof. Moses Anubi) with Prof. Adeosun (Dean, Faculty of Engineering, UNILAG), Prof. Balogun, and Prof. Ogunwolu (Nov. 2025).' },
   { img: 'academia-10', width: 960, height: 535, title: 'International Research Visit to Raoatech Yaba Hub (2026)', body: 'Prof. Moses Anubi (Florida State University) visiting Raoatech’s Yaba facility for collaborative engineering and R&D discussions.' },
+  { img: 'academia-11', width: 884, height: 667, title: 'Raoatech’s Free 6-Day Training for 50 UNILAG Undergraduates (2018)', body: 'Mr. Oludare Olarewaju (Founder & CEO, Raoatech) at Raoatech’s free 6-day training for 50 University of Lagos undergraduates from all faculties, including the College of Medicine.' },
+  { img: 'academia-12', width: 859, height: 675, title: 'Prof. Sunday Adebisi at Raoatech’s 6-Day UNILAG Training (2018)', body: 'Professor Sunday Adebisi addressing participants at Raoatech’s free 6-day training for 50 University of Lagos undergraduates from all faculties, including the College of Medicine.' },
+  { img: 'academia-13', width: 832, height: 577, title: 'IoT in Healthcare Training for UNILAG Medical Students (2019)', body: 'Raoatech training 27 University of Lagos medical students on the applications of IoT devices in the healthcare sector.' },
+  { img: 'academia-14', width: 833, height: 673, title: 'Judging the UNILAG Medical Students’ Tech Competition', body: 'Mr. Oludare Olarewaju serving as a judge at the tech competition organized by the University of Lagos Association of Medical Students.' },
+  { img: 'academia-15', width: 610, height: 491, title: 'AMSUL Health Week (University of Lagos)', body: 'Mr. Oludare Olarewaju at the Health Week organized by the University of Lagos Association of Medical Students (AMSUL).' },
 ]
 
 export const industryGallery: GalleryItem[] = [
@@ -537,6 +581,20 @@ export const industryGallery: GalleryItem[] = [
   { img: 'industry-08', width: 574, height: 571, title: 'Tech Hire-a-thon & Employability Conference 1.0', body: 'Official flyer featuring Mr. Oludare Olarewaju as Facilitator at American Corner, Ikeja.' },
   { img: 'industry-09', width: 960, height: 532, title: 'Nigeria AfCFTA Hackathon 2025 Winners (₦10,000,000 Prize)', body: 'Mr. Oludare Olarewaju celebrating with the mentored UNILAG undergraduate team that won the NITDA / Science of Trade E-Commerce Regulatory Sandbox challenge.' },
   { img: 'industry-10', width: 350, height: 576, title: '2025 Africa Creative Market (ACM) Hackathon Winners (₦10,000,000 Prize)', body: 'Mr. Oludare Olarewaju with the mentored engineering team sponsored by AWS and Creative Economy Practice.' },
+  { img: 'industry-11', width: 684, height: 476, title: 'Judge at Africa’s Biggest Creative-Economy Event', body: 'Mr. Oludare Olarewaju serving as a judge at Africa’s biggest creative-economy-focused event.' },
+  { img: 'industry-12', width: 439, height: 440, title: 'AWS Cloud Clubs Speaker for African Youths (2024)', body: 'Mr. Oludare Olarewaju speaking on “Cloud, AI and IoTs: Strategic Preparations for the Big Opportunities” at an AWS event for African youths, University of Ilorin.' },
+  { img: 'industry-13', width: 960, height: 414, title: 'Virtual Speaker, Kwara State AI Summit 2025', body: 'Mr. Oludare Olarewaju addressing the Kwara State 2025 AI Summit virtually at the Ilorin Innovation Hub.' },
+  { img: 'industry-14', width: 448, height: 550, title: 'Kwara AI Summit 2025 Speaker', body: 'Official Kwara AI Summit 2025 flyer featuring Mr. Oludare Olarewaju, Founder and CEO of Raoatech, as a speaker.' },
+  { img: 'industry-15', width: 942, height: 776, title: 'Raoatech Team with YABATECH’s Director of Industrial Partnership', body: 'Raoatech’s team with Dr. Ajala, Director of Industrial Partnership at Yaba College of Technology, and his colleague.' },
+  { img: 'industry-16', width: 554, height: 745, title: 'National TVET Exhibition, Lagos (June 2026)', body: 'Raoatech’s team, led by Mr. Oludare Olarewaju, at the National Technical Vocational Education Training (TVET) event held on 9 June 2026 in Lagos.' },
+]
+
+export const industryClips: Clip[] = [
+  {
+    id: '8Zb4jA7yHI8',
+    title: 'AI-Driven Literacy Assessment with the Office of Education Quality Assurance',
+    body: 'Raoatech’s partnership with the Office of Education Quality Assurance, the regulator of K-12 education quality in Lagos State, on applying an AI-driven literacy assessment platform.',
+  },
 ]
 
 export const talentStages = [
@@ -556,4 +614,17 @@ export const talentGallery: GalleryItem[] = [
   { img: 'talent-07', width: 330, height: 552, title: 'GSM Telecommunications & Hardware Diagnostics', body: 'Practical circuit-board troubleshooting and mobile hardware repair lab for final-year students at Methodist Boys’ High School.' },
   { img: 'talent-08', width: 960, height: 533, title: 'Software Coding & Debugging Methodologies', body: 'Teaching structured programming logic and systematic code debugging to secondary school learners at Methodist Boys’ High School.' },
   { img: 'talent-09', width: 659, height: 484, title: 'Youth Robotics, AI & Coding Competition Winners (2023)', body: 'Raoatech’s engineering instructors celebrating student prize winners at the competition sponsored by Mr. Segun Idowu in partnership with Foster Prime Schools.' },
+]
+
+export const talentClips: Clip[] = [
+  {
+    id: 'M-m7Q8J5O7I',
+    title: 'Raoatech’s Female Learners Building Scribbling Robots',
+    body: 'Young female learners at Raoatech designing and building scribbling robots.',
+  },
+  {
+    id: 'qIvrdfgQ3Wg',
+    title: 'Raoatech’s Trained Learners Showing an IoT System in a Ludo Game',
+    body: 'Learners trained by Raoatech demonstrating how an IoT system can be applied to a game of Ludo.',
+  },
 ]
