@@ -198,8 +198,6 @@ a.mail:hover,a.tel:hover{border-color:var(--amber);color:var(--amber)}
 .enquiry .btn[disabled]{opacity:.6;cursor:progress}
 .field-error{font:500 13px/1.4 var(--body);letter-spacing:normal;text-transform:none;color:#f08a7a}
 .form-error{color:#f08a7a}
-.mail-fallback{margin:14px 0 0;font-size:15px;line-height:1.6;color:var(--silver)}
-.mail-fallback a{color:var(--amber);text-underline-offset:3px}
 .enquiry.sent{padding:28px;border:1px solid var(--amber);color:var(--white)}
 
 /* JUSTIFIED BODY TEXT: paragraphs run flush to both edges so the right-hand side lines up. */
