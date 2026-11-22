@@ -1,11 +1,12 @@
 import Image from 'next/image'
 import type { ReactNode } from 'react'
-import type { GalleryItem } from '@/content/site'
+import type { Clip, GalleryItem } from '@/content/site'
+import { VideoGrid } from '@/components/Videos'
 
-type Props = { id: string; eyebrow: string; title: string; intro: string; items: GalleryItem[]; children?: ReactNode }
+type Props = { id: string; eyebrow: string; title: string; intro: string; items: GalleryItem[]; clips?: Clip[]; children?: ReactNode }
 
 /** A section of captioned event photos. */
-export function Gallery({ id, eyebrow, title, intro, items, children }: Props) {
+export function Gallery({ id, eyebrow, title, intro, items, clips, children }: Props) {
   return (
     <section className="gallery" id={id}>
       <div className="wrap">
@@ -33,6 +34,7 @@ export function Gallery({ id, eyebrow, title, intro, items, children }: Props) {
             </figure>
           ))}
         </div>
+        {clips && clips.length > 0 && <VideoGrid clips={clips} />}
       </div>
     </section>
   )

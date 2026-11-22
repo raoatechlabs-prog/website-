@@ -219,9 +219,25 @@ export type Clip = { id: string; title?: string; body?: string; vertical?: boole
 
 export const featuredVideos: Clip[] = [
   {
+    id: '2T9wmtCMOu4',
+    vertical: true,
+    title: 'Visitor Management System for Lagos State Lotteries Board',
+    body: 'Raoatech’s deployment of a Visitor Management System for the Lagos State Lotteries Board (now the Lagos State Lotteries and Gaming Authority).',
+  },
+  {
+    id: 'G8y_m8QE-Xw',
+    title: 'Access Control System for The Nest Innovation Park',
+    body: 'Raoatech’s installation of an Access Control System at The Nest Innovation Park, Yaba, Lagos.',
+  },
+  {
     id: '7vOsGg8nbDU',
-    title: 'STEM & Emerging Tech Lab Highlight',
-    body: 'Live hands-on technical engagement with robotics, artificial intelligence, and embedded hardware systems.',
+    title: 'Drone Piloting for Learners',
+    body: 'Hands-on drone piloting sessions for young learners at Raoatech R&D and Innovation Point.',
+  },
+  {
+    id: '3Vnp8ZFCQ7I',
+    title: 'Robotics & STEM Training at St. Gregory College, Lagos',
+    body: 'A Raoatech-organised tech event, in partnership with the management of St. Gregory College, introducing over 400 students to robotics and STEM.',
   },
   {
     id: 'MKKxHSv2hw4',
@@ -539,6 +555,14 @@ export const industryGallery: GalleryItem[] = [
   { img: 'industry-10', width: 350, height: 576, title: '2025 Africa Creative Market (ACM) Hackathon Winners (₦10,000,000 Prize)', body: 'Mr. Oludare Olarewaju with the mentored engineering team sponsored by AWS and Creative Economy Practice.' },
 ]
 
+export const industryClips: Clip[] = [
+  {
+    id: '8Zb4jA7yHI8',
+    title: 'AI-Driven Literacy Assessment with the Office of Education Quality Assurance',
+    body: 'Raoatech’s partnership with the Office of Education Quality Assurance, the regulator of K-12 education quality in Lagos State, on applying an AI-driven literacy assessment platform.',
+  },
+]
+
 export const talentStages = [
   { stage: 'Stage 01 · Kids & Pre-Teens', title: 'Foundational STEM & Drone Flight', body: 'Hands-on drone piloting, visual coding, and basic electronics curiosity.' },
   { stage: 'Stage 02 · Teens & Youth', title: 'Robotics, IoT & Space Tech', body: 'Home automation, embedded systems, hardware diagnostics, and R&D lab immersions.' },
@@ -557,3 +581,5 @@ export const talentGallery: GalleryItem[] = [
   { img: 'talent-08', width: 960, height: 533, title: 'Software Coding & Debugging Methodologies', body: 'Teaching structured programming logic and systematic code debugging to secondary school learners at Methodist Boys’ High School.' },
   { img: 'talent-09', width: 659, height: 484, title: 'Youth Robotics, AI & Coding Competition Winners (2023)', body: 'Raoatech’s engineering instructors celebrating student prize winners at the competition sponsored by Mr. Segun Idowu in partnership with Foster Prime Schools.' },
 ]
+
+export const talentClips: Clip[] = [{ id: 'qIvrdfgQ3Wg' }, { id: 'M-m7Q8J5O7I', vertical: true }]

@@ -12,7 +12,16 @@ import { Videos } from '@/components/Videos'
 import { Contact } from '@/components/Contact'
 import { Footer } from '@/components/Footer'
 import { Reveal } from '@/components/Reveal'
-import { academicGallery, featuredVideos, industryGallery, sessionVideos, talentGallery, talentStages } from '@/content/site'
+import {
+  academicGallery,
+  featuredVideos,
+  industryClips,
+  industryGallery,
+  sessionVideos,
+  talentClips,
+  talentGallery,
+  talentStages,
+} from '@/content/site'
 
 export default function Home() {
   return (
@@ -20,6 +29,7 @@ export default function Home() {
       <Hero />
       <main>
         <Banner />
+        <SmartCap />
         <Videos
           id="inside"
           eyebrow="Innovation in action · Live lab highlights"
@@ -44,6 +54,7 @@ export default function Home() {
           title="Industry & Enterprise Ecosystem Collaboration"
           intro="Delivering nationwide public-sector ICT capacity building, advising enterprise engineering teams, speaking on global innovation stages, and mentoring winning venture teams across Africa’s premier hackathons."
           items={industryGallery}
+          clips={industryClips}
         />
         <Gallery
           id="talent"
@@ -51,6 +62,7 @@ export default function Home() {
           title="Early-Stage Deep-Tech Talent Pipeline (Kids to Industry)"
           intro="Raoatech R&D and Innovation Point is a commercial deep-tech research and product commercialization center, not a traditional school. However, we operate on a deliberate talent-development philosophy: cultivating technical mastery across every stage of human growth, from kids and pre-teens to teens, university researchers, and full-fledged adult engineers, building a globally competitive workforce for Africa’s digital and industrial economy."
           items={talentGallery}
+          clips={talentClips}
         >
           <div className="stages">
             {talentStages.map((s) => (
@@ -70,7 +82,6 @@ export default function Home() {
           clips={sessionVideos}
         />
         <BrandFilm />
-        <SmartCap />
         <Leadership />
         <Partner />
         <Donate />
