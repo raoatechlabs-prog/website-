@@ -540,6 +540,11 @@ export const academicGallery: GalleryItem[] = [
   { img: 'academia-08', width: 517, height: 364, title: 'Raoatech-Sponsored UNILAG 6-Day Tech & Leadership Program', body: 'Entrepreneurship Enablement and Leadership Week (EELW) featuring Prof. Folasade Ogunsola (then DVC, Development Services, UNILAG), Mrs. Adenike, Mr. Oludare Olarewaju, and student trainees.' },
   { img: 'academia-09', width: 937, height: 564, title: 'International R&D Delegation (Florida State University & UNILAG)', body: 'Mr. Oludare Olarewaju joining FSU representatives (Prof. Sastry Pamidi & Prof. Moses Anubi) with Prof. Adeosun (Dean, Faculty of Engineering, UNILAG), Prof. Balogun, and Prof. Ogunwolu (Nov. 2025).' },
   { img: 'academia-10', width: 960, height: 535, title: 'International Research Visit to Raoatech Yaba Hub (2026)', body: 'Prof. Moses Anubi (Florida State University) visiting Raoatech’s Yaba facility for collaborative engineering and R&D discussions.' },
+  { img: 'academia-11', width: 884, height: 667, title: 'Raoatech’s Free 6-Day Training for 50 UNILAG Undergraduates (2018)', body: 'Mr. Oludare Olarewaju (Founder & CEO, Raoatech) at Raoatech’s free 6-day training for 50 University of Lagos undergraduates from all faculties, including the College of Medicine.' },
+  { img: 'academia-12', width: 859, height: 675, title: 'Prof. Sunday Adebisi at Raoatech’s 6-Day UNILAG Training (2018)', body: 'Professor Sunday Adebisi addressing participants at Raoatech’s free 6-day training for 50 University of Lagos undergraduates from all faculties, including the College of Medicine.' },
+  { img: 'academia-13', width: 832, height: 577, title: 'IoT in Healthcare Training for UNILAG Medical Students (2019)', body: 'Raoatech training 27 University of Lagos medical students on the applications of IoT devices in the healthcare sector.' },
+  { img: 'academia-14', width: 833, height: 673, title: 'Judging the UNILAG Medical Students’ Tech Competition', body: 'Mr. Oludare Olarewaju serving as a judge at the tech competition organized by the University of Lagos Association of Medical Students.' },
+  { img: 'academia-15', width: 610, height: 491, title: 'AMSUL Health Week (University of Lagos)', body: 'Mr. Oludare Olarewaju at the Health Week organized by the University of Lagos Association of Medical Students (AMSUL).' },
 ]
 
 export const industryGallery: GalleryItem[] = [
@@ -553,6 +558,12 @@ export const industryGallery: GalleryItem[] = [
   { img: 'industry-08', width: 574, height: 571, title: 'Tech Hire-a-thon & Employability Conference 1.0', body: 'Official flyer featuring Mr. Oludare Olarewaju as Facilitator at American Corner, Ikeja.' },
   { img: 'industry-09', width: 960, height: 532, title: 'Nigeria AfCFTA Hackathon 2025 Winners (₦10,000,000 Prize)', body: 'Mr. Oludare Olarewaju celebrating with the mentored UNILAG undergraduate team that won the NITDA / Science of Trade E-Commerce Regulatory Sandbox challenge.' },
   { img: 'industry-10', width: 350, height: 576, title: '2025 Africa Creative Market (ACM) Hackathon Winners (₦10,000,000 Prize)', body: 'Mr. Oludare Olarewaju with the mentored engineering team sponsored by AWS and Creative Economy Practice.' },
+  { img: 'industry-11', width: 684, height: 476, title: 'Judge at Africa’s Biggest Creative-Economy Event', body: 'Mr. Oludare Olarewaju serving as a judge at Africa’s biggest creative-economy-focused event.' },
+  { img: 'industry-12', width: 439, height: 440, title: 'AWS Cloud Clubs Speaker for African Youths (2024)', body: 'Mr. Oludare Olarewaju speaking on “Cloud, AI and IoTs: Strategic Preparations for the Big Opportunities” at an AWS event for African youths, University of Ilorin.' },
+  { img: 'industry-13', width: 960, height: 414, title: 'Virtual Speaker, Kwara State AI Summit 2025', body: 'Mr. Oludare Olarewaju addressing the Kwara State 2025 AI Summit virtually at the Ilorin Innovation Hub.' },
+  { img: 'industry-14', width: 448, height: 550, title: 'Kwara AI Summit 2025 Speaker', body: 'Official Kwara AI Summit 2025 flyer featuring Mr. Oludare Olarewaju, Founder and CEO of Raoatech, as a speaker.' },
+  { img: 'industry-15', width: 942, height: 776, title: 'Raoatech Team with YABATECH’s Director of Industrial Partnership', body: 'Raoatech’s team with Dr. Ajala, Director of Industrial Partnership at Yaba College of Technology, and his colleague.' },
+  { img: 'industry-16', width: 554, height: 745, title: 'National TVET Exhibition, Lagos (June 2026)', body: 'Raoatech’s team, led by Mr. Oludare Olarewaju, at the National Technical Vocational Education Training (TVET) event held on 9 June 2026 in Lagos.' },
 ]
 
 export const industryClips: Clip[] = [
