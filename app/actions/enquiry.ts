@@ -3,15 +3,24 @@
 import { z } from 'zod'
 import * as Sentry from '@sentry/nextjs'
 import { createClient } from '@/lib/supabase/server'
-import { site } from '@/content/site'
+import { labServices, site, ventureStudio } from '@/content/site'
 
 const schema = z.object({
   track: z.enum(['talent', 'grants', 'investment', 'general']),
   name: z.string().trim().min(1, 'Enter your name').max(200),
   email: z.email('Enter a valid email address').max(320),
-  organisation: z.string().trim().max(200).optional(),
-  message: z.string().trim().min(1, 'Tell us a little about your interest').max(5000),
+  organisation: z.string().trim().min(1, 'Enter your organization or institution').max(200),
+  phone: z.string().trim().min(5, 'Enter a phone or WhatsApp number').max(40),
+  service: z.string().trim().max(60),
+  message: z.string().trim().min(1, 'Tell us a little about your project').max(5000),
 })
+
+const serviceLabels: Record<string, string> = {
+  ...Object.fromEntries(labServices.map((l) => [l.id, `Lab ${l.no}: ${l.name}`])),
+  [ventureStudio.id]: ventureStudio.name,
+  partnership: 'Partnership, sponsorship or donation',
+  general: 'General enquiry',
+}
 
 export type EnquiryState =
   | { status: 'idle' }
@@ -23,7 +32,9 @@ export async function submitEnquiry(_prev: EnquiryState, form: FormData): Promis
     track: form.get('track') || 'general',
     name: form.get('name'),
     email: form.get('email'),
-    organisation: form.get('organisation') || undefined,
+    organisation: form.get('organisation') ?? '',
+    phone: form.get('phone') ?? '',
+    service: form.get('service') || 'general',
     message: form.get('message'),
   })
   if (!parsed.success) {
@@ -60,10 +71,15 @@ export async function submitEnquiry(_prev: EnquiryState, form: FormData): Promis
 type Enquiry = z.infer<typeof schema>
 
 async function storeEnquiry(supabase: NonNullable<Awaited<ReturnType<typeof createClient>>>, enquiry: Enquiry) {
-  const { error } = await supabase.from('enquiries').insert(enquiry)
+  // The table predates the phone and service fields, so they are folded into the message.
+  const { track, name, email, organisation } = enquiry
+  const message = `Lab / service area: ${serviceLabel(enquiry.service)}\nPhone / WhatsApp: ${enquiry.phone}\n\n${enquiry.message}`
+  const { error } = await supabase.from('enquiries').insert({ track, name, email, organisation, message })
   if (error) Sentry.captureException(error)
   return !error
 }
+
+const serviceLabel = (id: string) => serviceLabels[id] ?? 'General enquiry'
 
 const trackLabel: Record<Enquiry['track'], string> = {
   talent: 'Track A · Join the team',
@@ -83,12 +99,14 @@ async function emailEnquiry(enquiry: Enquiry) {
         from: process.env.ENQUIRY_FROM_EMAIL || 'Raoatech website <onboarding@resend.dev>',
         to: [process.env.ENQUIRY_TO_EMAIL || site.email],
         reply_to: enquiry.email,
-        subject: `Website enquiry from ${oneLine(enquiry.name)} (${trackLabel[enquiry.track]})`,
+        subject: `${serviceLabel(enquiry.service)}: website enquiry from ${oneLine(enquiry.name)}`,
         text: [
-          `Interested in: ${trackLabel[enquiry.track]}`,
+          `Lab / service area: ${serviceLabel(enquiry.service)}`,
+          `Came from: ${trackLabel[enquiry.track]}`,
           `Name: ${oneLine(enquiry.name)}`,
+          `Organization: ${oneLine(enquiry.organisation)}`,
           `Email: ${enquiry.email}`,
-          `Organisation: ${enquiry.organisation ? oneLine(enquiry.organisation) : 'Not given'}`,
+          `Phone / WhatsApp: ${oneLine(enquiry.phone)}`,
           '',
           'Message:',
           enquiry.message,

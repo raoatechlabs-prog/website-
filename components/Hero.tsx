@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { heroCopy } from '@/content/site'
 import { SiteNav } from './SiteNav'
 
 export function Hero() {
@@ -14,25 +15,17 @@ export function Hero() {
       />
       <SiteNav />
       <div className="copy wrap">
-        <div className="eyebrow">Yaba, Lagos · Deep-tech incubator &amp; venture studio</div>
-        <h1>Engineering Sovereignty</h1>
-        <p className="lede">Solving Africa&apos;s healthcare, security and power crises through deep-tech commercialization.</p>
+        <div className="eyebrow">{heroCopy.eyebrow}</div>
+        <h1>{heroCopy.title}</h1>
+        <p className="lede">{heroCopy.lede}</p>
         <div className="ctas">
-          <a className="btn" href="#labs">
-            Explore the labs
+          <a className="btn amber" href="#labs">
+            Explore our 12 labs &amp; services
           </a>
-          <a className="btn amber" href="#partner">
-            Partner with us
-          </a>
-          <a className="btn" href="#donate">
-            Donate
+          <a className="btn" href="#contact">
+            Partner or request R&amp;D consultation
           </a>
         </div>
-      </div>
-      <div className="loc">
-        1A Hughes Avenue
-        <br />
-        Alagomeji, Yaba, Lagos
       </div>
     </header>
   )
