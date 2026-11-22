@@ -220,7 +220,6 @@ export type Clip = { id: string; title?: string; body?: string; vertical?: boole
 export const featuredVideos: Clip[] = [
   {
     id: '2T9wmtCMOu4',
-    vertical: true,
     title: 'Visitor Management System for Lagos State Lotteries Board',
     body: 'Raoatech’s deployment of a Visitor Management System for the Lagos State Lotteries Board (now the Lagos State Lotteries and Gaming Authority).',
   },
@@ -593,4 +592,15 @@ export const talentGallery: GalleryItem[] = [
   { img: 'talent-09', width: 659, height: 484, title: 'Youth Robotics, AI & Coding Competition Winners (2023)', body: 'Raoatech’s engineering instructors celebrating student prize winners at the competition sponsored by Mr. Segun Idowu in partnership with Foster Prime Schools.' },
 ]
 
-export const talentClips: Clip[] = [{ id: 'qIvrdfgQ3Wg' }, { id: 'M-m7Q8J5O7I', vertical: true }]
+export const talentClips: Clip[] = [
+  {
+    id: 'M-m7Q8J5O7I',
+    title: 'Raoatech’s Female Learners Building Scribbling Robots',
+    body: 'Young female learners at Raoatech designing and building scribbling robots.',
+  },
+  {
+    id: 'qIvrdfgQ3Wg',
+    title: 'Raoatech’s Trained Learners Showing an IoT System in a Ludo Game',
+    body: 'Learners trained by Raoatech demonstrating how an IoT system can be applied to a game of Ludo.',
+  },
+]

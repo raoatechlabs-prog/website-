@@ -14,6 +14,7 @@ export function Gallery({ id, eyebrow, title, intro, items, clips, children }: P
         <h2>{title}</h2>
         <p className="intro">{intro}</p>
         {children}
+        {clips && clips.length > 0 && <VideoGrid clips={clips} />}
         <div className="gallery-grid">
           {items.map((item) => (
             <figure className="g-card" key={item.img}>
@@ -34,7 +35,6 @@ export function Gallery({ id, eyebrow, title, intro, items, clips, children }: P
             </figure>
           ))}
         </div>
-        {clips && clips.length > 0 && <VideoGrid clips={clips} />}
       </div>
     </section>
   )
