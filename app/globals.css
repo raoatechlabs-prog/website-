@@ -394,3 +394,11 @@ footer .foot-links,footer .foot-top span{text-transform:none;letter-spacing:.02e
 .g-img img.tall{height:100%;object-fit:contain}
 .hero p.lede,.banner-show figcaption p{text-align:start;hyphens:manual;-webkit-hyphens:manual}
 @media (max-width:820px){.hero::after{background:linear-gradient(180deg,rgba(11,14,22,.75) 0%,rgba(11,14,22,.82) 50%,var(--carbon) 100%)}}
+.profiles{display:grid;gap:clamp(40px,5vw,64px);margin-top:clamp(48px,6vw,72px)}
+.profile{display:grid;grid-template-columns:minmax(0,280px) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:start;padding-bottom:clamp(40px,5vw,64px);border-bottom:1px solid var(--line)}
+.profile img{width:100%;height:auto;display:block;border:1px solid var(--line)}
+.profile h3{font-size:clamp(28px,3vw,40px);letter-spacing:.04em}
+.profile .profile-role{display:block;margin:10px 0 22px;font:500 12px/1.5 var(--body);letter-spacing:.18em;text-transform:uppercase;color:var(--amber)}
+.profile p{font-size:16px;line-height:1.7;margin-top:14px}
+@media (max-width:820px){.profile{grid-template-columns:minmax(0,1fr)}.profile img{max-width:320px}}
+.profile:last-child{border-bottom:0;padding-bottom:0}

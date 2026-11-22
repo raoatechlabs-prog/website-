@@ -28,9 +28,33 @@ export const nav = [
 
 export type Person = { name: string; role: string; org?: string; photo: string }
 
+export type Profile = { name: string; role: string; photo: string; bio: string[] }
+
+// Full profiles. More executives' profiles will be added in the next version.
+export const profiles: Profile[] = [
+  {
+    name: 'Oludare Olarewaju',
+    role: 'Founder, Chief Executive Officer & Chief Product Architect',
+    photo: 'oludare-profile',
+    bio: [
+      'Oludare Olarewaju is a serial technology entrepreneur, innovation ecosystem builder, product strategist, and software quality assurance leader with over 15 years of experience across enterprise solutions architecture, software engineering, edtech, fintech, artificial intelligence, and venture development.',
+      'As the Founder, CEO, and Chief Product Architect of Raoatech IT-Electromech Limited, Oludare drives the strategic direction, technical architecture, and operational scale of the company’s enterprise platforms and commercialization programs. He is also the visionary behind the Raoatech R&D and Innovation Point, a commercialization-driven ecosystem designed to bridge academic research, advanced technology prototyping, and venture creation. His professional trajectory includes founding Techxia Communications & Automation and early hands-on technical experience in telecoms engineering, specializing in VSAT installation, networking, and GSM operations.',
+      'Oludare holds a Bachelor of Science (B.Sc.) in Systems Engineering from the University of Lagos and a Postgraduate Advanced Certificate in Oil and Gas Downstream Operations Management from UNILAG Consult. He also completed formal project management training through The American PM Programme at the Project Management College UK.',
+    ],
+  },
+  {
+    name: 'Temitope Oladele-Olarewaju',
+    role: 'Director, Quality Assurance and Operations',
+    photo: 'temitope-profile',
+    bio: [
+      'Temitope Oladele-Olarewaju is an accomplished technology professional and software quality assurance specialist with approximately 14 years of experience across telecommunications, financial services, digital transformation, and technology operations.',
+      'As Director of Quality Assurance and Operations at Raoatech IT-Electromech Limited, Temitope provides strategic and operational leadership across the company’s tech platforms, commercialization programs, innovation initiatives, and ecosystem development. Her extensive background includes work with leading enterprise organizations, such as MTN Nigeria and key banking institutions, equipping her with expertise in enterprise systems, QA frameworks, business process optimization, and large-scale tech deployment.',
+      'Temitope holds a B.Sc. in Computer Science from Olabisi Onabanjo University (OOU) and is an ISTQB Certified Software Tester, reflecting international competence in software delivery best practices and quality engineering.',
+    ],
+  },
+]
+
 export const leadership: Person[] = [
-  { name: 'Oludare Olarewaju', role: 'Founder, CEO & Chief Product Architect', photo: 'oludare' },
-  { name: 'Temitope Oladele-Olarewaju', role: 'Director, QA & Operations', photo: 'temitope' },
   { name: 'Prof. T.A. Ibidapo', role: 'Non-Executive Director; Lead Partner, International Standards & QMS Compliance Lab', org: 'United States', photo: 'ibidapo' },
   { name: 'Prof. Moses Anubi', role: 'Non-Executive Director, Resilient & Autonomous Systems', org: 'United States', photo: 'anubi' },
   { name: 'Dr. Elizabeth Oludadepo', role: 'Director, Smart Diagnostics & Therapeutic Logistics Lab', photo: 'oludadepo' },
