@@ -13,6 +13,7 @@ alter table public.enquiries enable row level security;
 
 -- Anyone may submit an enquiry; nobody can read them with the public key.
 -- Read enquiries from the Supabase dashboard or with the service role key.
+drop policy if exists "Anyone can submit an enquiry" on public.enquiries;
 create policy "Anyone can submit an enquiry"
   on public.enquiries for insert
   to anon, authenticated
