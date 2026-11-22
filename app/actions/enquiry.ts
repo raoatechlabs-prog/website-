@@ -99,7 +99,7 @@ async function emailEnquiry(enquiry: Enquiry) {
         from: process.env.ENQUIRY_FROM_EMAIL || 'Raoatech website <onboarding@resend.dev>',
         to: [process.env.ENQUIRY_TO_EMAIL || site.email],
         reply_to: enquiry.email,
-        subject: `Website enquiry from ${oneLine(enquiry.name)} (${serviceLabel(enquiry.service)})`,
+        subject: `${serviceLabel(enquiry.service)}: website enquiry from ${oneLine(enquiry.name)}`,
         text: [
           `Lab / service area: ${serviceLabel(enquiry.service)}`,
           `Came from: ${trackLabel[enquiry.track]}`,
