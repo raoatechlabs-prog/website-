@@ -55,6 +55,7 @@ export default function Home() {
           intro="Delivering nationwide public-sector ICT capacity building, advising enterprise engineering teams, speaking on global innovation stages, and mentoring winning venture teams across Africa’s premier hackathons."
           items={industryGallery}
           clips={industryClips}
+          clipsLast
         />
         <Gallery
           id="talent"
