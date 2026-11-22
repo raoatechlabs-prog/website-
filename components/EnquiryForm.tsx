@@ -15,6 +15,21 @@ const serviceOptions = [
   { value: 'general', label: 'General enquiry' },
 ]
 
+/**
+ * Sends the form to the server. If the request itself fails (for example the site was
+ * updated while this page was open), the visitor sees a message instead of a crashed page.
+ */
+async function sendEnquiry(prev: EnquiryState, form: FormData): Promise<EnquiryState> {
+  try {
+    return await submitEnquiry(prev, form)
+  } catch {
+    return {
+      status: 'error',
+      message: `Something went wrong sending your enquiry. Refresh the page and try again, or email us at ${site.email}.`,
+    }
+  }
+}
+
 export function EnquiryForm() {
   const params = useSearchParams()
   const form = useRef<HTMLFormElement>(null)
@@ -29,7 +44,7 @@ export function EnquiryForm() {
         : 'partnership'
   const [mail, setMail] = useState<{ gmail: string; outlook: string } | null>(null)
   const [mailNote, setMailNote] = useState('')
-  const [state, action, pending] = useActionState<EnquiryState, FormData>(submitEnquiry, { status: 'idle' })
+  const [state, action, pending] = useActionState<EnquiryState, FormData>(sendEnquiry, { status: 'idle' })
 
   useEffect(() => {
     if (state.status === 'sent') posthog.capture('enquiry_submitted')
